@@ -1,11 +1,8 @@
 # platform-ref-observability-datadog
-Platform Reference to Set Up a Datadog agent for Crossplane Observability.
+Platform Reference to Set Up a Datadog agent for Crossplane 
+and Provider Observability.
 
 ## Usage
-Note: `build/makelib/controlplane.mk` requires the addition of
-`--set metrics.enabled=true` in line 28 until the build submodule
-has been updated for the Crossplane pods to emit metrics at `8080/metrics`.
-
 Run `make e2e` to exercise end to end tests for the observability
 integrations. It requires a DATADOG_API_KEY and DATADOG_APP_KEY. 
 You may assign your API key also to the DATADOG_APP_KEY, if you
