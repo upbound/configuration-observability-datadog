@@ -1,0 +1,187 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: xdatadogs.observe.platformref.upbound.io
+spec:
+  compositeTypeRef:
+    apiVersion: observe.platformref.upbound.io/v1alpha1
+    kind: XDatadog
+
+  patchSets:
+    - name: common
+      patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.parameters.deletionPolicy
+          toFieldPath: spec.deletionPolicy
+        - fromFieldPath: spec.parameters.id
+          toFieldPath: spec.providerConfigRef.name
+          transforms:
+            - type: string
+              string:
+                fmt: "platform-ref-%s"
+
+  resources:
+    - name: copy-secret
+      base:
+        apiVersion: kubernetes.crossplane.io/v1alpha1
+        kind: Object
+        spec:
+          references:
+          - patchesFrom:
+              apiVersion: v1
+              kind: Secret
+              name: datadog-creds
+              namespace: upbound-system
+              fieldPath: data.api-key
+            toFieldPath: data.api-key
+          - patchesFrom:
+              apiVersion: v1
+              kind: Secret
+              name: datadog-creds
+              namespace: upbound-system
+              fieldPath: data.app-key
+            toFieldPath: data.app-key
+          forProvider:
+            manifest:
+              apiVersion: v1
+              kind: Secret
+              metadata:
+                name: datadog-creds
+                namespace: monitoring
+      patches:
+        - type: PatchSet
+          patchSetName: common
+
+    - name: namespace
+      base:
+        apiVersion: kubernetes.crossplane.io/v1alpha1
+        kind: Object
+        spec:
+          forProvider:
+            manifest:
+              apiVersion: v1
+              kind: Namespace
+              metadata:
+                name: monitoring
+      patches:
+        - type: PatchSet
+          patchSetName: common
+
+    - name: service-account
+      base:
+        apiVersion: kubernetes.crossplane.io/v1alpha1
+        kind: Object
+        spec:
+          forProvider:
+            manifest:
+              apiVersion: v1
+              kind: ServiceAccount
+              metadata:
+                name: datadog-upbound
+                namespace: monitoring
+      patches:
+        - type: PatchSet
+          patchSetName: common
+
+    - name: cluster-role
+      base:
+        apiVersion: kubernetes.crossplane.io/v1alpha1
+        kind: Object
+        spec:
+          forProvider:
+            manifest:
+              apiVersion: rbac.authorization.k8s.io/v1
+              kind: ClusterRole
+              metadata:
+                name: apiserver-cluster-role
+              rules:
+                - apiGroups:
+                    - ""
+                  resources:
+                    - pods
+                  verbs: ["get", "list" ]
+                - nonResourceURLs: ["/metrics"]
+                  verbs: ["get"]
+      patches:
+        - type: PatchSet
+          patchSetName: common
+
+    - name: cluster-role-binding
+      base:
+        apiVersion: kubernetes.crossplane.io/v1alpha1
+        kind: Object
+        spec:
+          forProvider:
+            manifest:
+              apiVersion: rbac.authorization.k8s.io/v1
+              kind: ClusterRoleBinding
+              metadata:
+                name: apiserver-cluster-role-binding
+              subjects:
+              - namespace: monitoring
+                kind: ServiceAccount
+                name: datadog-upbound
+              roleRef:
+                apiGroup: rbac.authorization.k8s.io
+                kind: ClusterRole
+                name: apiserver-cluster-role
+      patches:
+        - type: PatchSet
+          patchSetName: common
+
+    - name: helm-chart
+      base:
+        apiVersion: helm.crossplane.io/v1beta1
+        kind: Release
+        spec:
+          forProvider:
+            namespace: monitoring
+            chart:
+              name: datadog
+              repository: https://helm.datadoghq.com
+              version: 3.38.4
+            values:
+              datadog:
+                site: datadoghq.com
+                apiKeyExistingSecret: datadog-creds
+                appKeyExistingSecret: datadog-creds
+                logLevel: WARN
+                logsEnabled: true
+                logsConfigContainerCollectAll: true
+                processAgentEnabled: true
+                leaderElection: true
+                prometheusScrape:
+                  enabled: true
+                  serviceEndpoints: true
+                env:
+                - name: DD_HOSTNAME
+                  valueFrom:
+                    fieldRef:
+                      fieldPath: spec.nodeName
+                kubelet:
+                  tlsVerify: false
+              python_version: 3.9
+              agents:
+                image:
+                  repository: datadog-upbound_uxp
+                  tag: v1.0.0
+                  doNotCheckTag: true
+                rbac:
+                  create: false
+                  serviceAccountName: datadog-upbound
+              clusterAgent:
+                containerName: datadog-cluster-agent
+                enabled: true
+                replicas: 2
+                createPodDisruptionBudget: true
+                metricsProvider:
+                  enabled: true
+      patches:
+        - type: PatchSet
+          patchSetName: common
+        - fromFieldPath: spec.parameters.id
+          toFieldPath: metadata.annotations[crossplane.io/external-name]
+          transforms:
+            - type: string
+              string:
+                fmt: "platform-ref-%s"

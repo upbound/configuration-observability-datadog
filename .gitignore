@@ -19,3 +19,13 @@
 
 # Go workspace file
 go.work
+
+# Platform Ref Observability
+/.cache
+/.work
+/_output
+/results
+/.idea
+
+*.xpkg
+kubeconfig
