@@ -10,12 +10,19 @@ do not have a dedicated DATADOG_APP_KEY. Refer to
 [Datadog API and Application Keys](https://docs.datadoghq.com/account_management/api-app-keys/)
 for instructions for how to create these keys.
 
+### Further Exploration
 The `local-dev` cluster will remain after tests and you can run
 `kubectl apply -f .up/examples/datadog.yaml` to install the agent
  and its dependencies.
 
+### Dashboards
 JSON for loadable dashboards is located in `.up/dashboards`.
 
+![Upbound UXP Overview](.up/dashboards/upbound_uxp_overview.png)
+![Upbound UXP Min Set](.up/dashboards/upbound_uxp_min_set.png)
+![Upbound UXP MR TTR](.up/dashboards/upbound_uxp_mr_ttr.png)
+
+### XPKG
 The `_output` directory includes readily usable configuration packages
 after `make build` has been run.
 
