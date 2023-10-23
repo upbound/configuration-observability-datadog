@@ -6,7 +6,9 @@ and Provider observability.
 Run `make e2e` to exercise end to end tests for the observability
 integrations. It requires a DATADOG_API_KEY and DATADOG_APP_KEY. 
 You may assign your API key also to the DATADOG_APP_KEY, if you
-do not have a dedicated DATADOG_API_KEY.
+do not have a dedicated DATADOG_APP_KEY. Refer to
+[Datadog API and Application Keys](https://docs.datadoghq.com/account_management/api-app-keys/)
+for instructions for how to create these keys.
 
 The `local-dev` cluster will remain after tests and you can run
 `kubectl apply -f .up/examples/datadog.yaml` to install the agent
