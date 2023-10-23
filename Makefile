@@ -1,5 +1,5 @@
 # Project Setup
-PROJECT_NAME := platform-ref-observability
+PROJECT_NAME := configuration-observability-datadog
 PROJECT_REPO := github.com/upbound/$(PROJECT_NAME)
 
 # NOTE(hasheddan): the platform is insignificant here as Configuration package
@@ -18,6 +18,13 @@ UPTEST_VERSION = v0.2.1
 -include build/makelib/k8s_tools.mk
 # ====================================================================================
 # Setup XPKG
+
+# NOTE(jastang): Configurations deployed in Upbound do not currently follow
+# certain conventions such as the default examples root or package directory.
+XPKG_DIR = $(shell pwd)
+XPKG_EXAMPLES_DIR = .up/examples
+XPKG_IGNORE = .github/workflows/ci.yaml,.github/workflows/tag.yml,.github/workflows/e2e.yaml,init/*.yaml,.up/examples/aws/*.yaml,.up/examples/azure/*.yaml,.up/examples/gcp/*.yaml,.up/examples/upbound/*.yaml,.work/uptest-datasource.yaml,config/provider/*.yaml,examples/datadog.yaml
+
 XPKG_REG_ORGS ?= xpkg.upbound.io/upbound
 # NOTE(hasheddan): skip promoting on xpkg.upbound.io as channel tags are
 # inferred.

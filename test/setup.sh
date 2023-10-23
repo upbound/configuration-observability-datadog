@@ -79,9 +79,9 @@ kubectl wait provider.pkg --all --for condition=Healthy --timeout=15m 2>/dev/nul
 NUM_CRDS=$(kubectl get crds|wc -l)
 echo_step_completed "Installed providers using ${NUM_CRDS} CRDs"
 
-echo_info "Installing provider-config-datadog"
-kubectl apply -f ${SCRIPT_DIR}/provider/config-datadog.yaml
-echo_step_completed "Installed provider-config-datadog"
+echo_info "Installing provider/config-datadog"
+kubectl apply -f ${SCRIPT_DIR}/../config/provider/config-datadog.yaml
+echo_step_completed "Installed provider/config-datadog"
 
 echo_info "Adding provider-kubernetes Service Account permissions"
 SA=$(kubectl -n ${CROSSPLANE_NAMESPACE} get sa -o name|grep provider-kubernetes | sed -e "s|serviceaccount\/|${CROSSPLANE_NAMESPACE}:|g")

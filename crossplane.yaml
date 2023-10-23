@@ -1,10 +1,10 @@
 apiVersion: meta.pkg.crossplane.io/v1alpha1
 kind: Configuration
 metadata:
-  name: platform-ref-observability
+  name: configuration-observability-datadog
   annotations:
     meta.crossplane.io/maintainer: Upbound <support@upbound.io>
-    meta.crossplane.io/source: github.com/upbound/platform-ref-observability
+    meta.crossplane.io/source: github.com/upbound/configuration-observability-datadog
     meta.crossplane.io/license: Apache-2.0
     meta.crossplane.io/description: |
       This reference platform Configuration for Kubernetes and Data Services
@@ -16,7 +16,9 @@ metadata:
       It provides platform APIs to provision observability software for
       infer the platform performance from metrics, logs and traces.
 
-      To learn more checkout the [GitHub repo](https://github.com/upbound/platform-ref-observability/) that you can copy and customize to meet the exact
+      To learn more checkout the 
+      [GitHub repo](https://github.com/upbound/configuration-observability-datadog/)
+      that you can copy and customize to meet the exact
       needs of your organization!
 spec:
   crossplane:
