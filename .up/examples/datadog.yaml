@@ -1,0 +1,10 @@
+apiVersion: observe.platform.upbound.io/v1alpha1
+kind: Datadog
+metadata:
+  name: datadog
+  namespace: default
+  annotations:
+    uptest.upbound.io/pre-delete-hook: ../../test/pre-delete-hook.sh
+spec:
+  parameters:
+    id: datadog

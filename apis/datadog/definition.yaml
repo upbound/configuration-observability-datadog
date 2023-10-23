@@ -1,9 +1,9 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: xdatadogs.observe.platformref.upbound.io
+  name: xdatadogs.observe.platform.upbound.io
 spec:
-  group: observe.platformref.upbound.io
+  group: observe.platform.upbound.io
   names:
     kind: XDatadog
     plural: xdatadogs

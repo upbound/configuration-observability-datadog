@@ -1,10 +1,10 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
-  name: xdatadogs.observe.platformref.upbound.io
+  name: xdatadogs.observe.platform.upbound.io
 spec:
   compositeTypeRef:
-    apiVersion: observe.platformref.upbound.io/v1alpha1
+    apiVersion: observe.platform.upbound.io/v1alpha1
     kind: XDatadog
 
   patchSets:
@@ -18,7 +18,7 @@ spec:
           transforms:
             - type: string
               string:
-                fmt: "platform-ref-%s"
+                fmt: "configuration-%s"
 
   resources:
     - name: copy-secret
