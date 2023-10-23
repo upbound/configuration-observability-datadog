@@ -1,0 +1,736 @@
+    "title": "Upbound UXP Resource Time To Readiness",
+    "description": "## Upbound UXP Min Set\n\nThis dashboard covers graphs for the UXP Resource Time To Readiness metrics. They are as follows\n\n- upjet_resource_ttr_bucket\n- upjet_resource_ttr_count\n- upjet_resource_ttr_sum\n- upjet_terraform_cli_duration_bucket\n- upjet_terraform_active_cli_invocations\n- upjet_terraform_running_processes",
+    "widgets": [
+        {
+            "id": 1436105568556493,
+            "definition": {
+                "type": "image",
+                "url": "https://static.upbound.io/marketing/upbound_uxp_logo.svg",
+                "sizing": "cover",
+                "has_background": true,
+                "has_border": true,
+                "vertical_align": "center",
+                "horizontal_align": "center"
+            },
+            "layout": {
+                "x": 0,
+                "y": 0,
+                "width": 2,
+                "height": 2
+            }
+        },
+        {
+            "id": 842769848596553,
+            "definition": {
+                "title": "Upjet Resource Time To Readiness Sum",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "legend_layout": "auto",
+                "legend_columns": [
+                    "avg",
+                    "min",
+                    "max",
+                    "value",
+                    "sum"
+                ],
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "sum:uxp.upjet_resource_ttr_sum{*}.as_rate()"
+                            }
+                        ],
+                        "response_format": "timeseries",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        },
+                        "display_type": "line"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 2,
+                "y": 0,
+                "width": 2,
+                "height": 2
+            }
+        },
+        {
+            "id": 8807870180367880,
+            "definition": {
+                "title": "AWS EC2 Upjet Resource Time To Readiness Bucket",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true,
+                    "scale": "linear"
+                },
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.upjet_resource_ttr_bucket{group:ec2.aws.upbound.io} by {kind}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 4,
+                "y": 0,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 1942841583709011,
+            "definition": {
+                "title": "AWS EFS Upjet Resource Time To Readiness Bucket",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true,
+                    "scale": "linear"
+                },
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.upjet_resource_ttr_bucket{group:efs.aws.upbound.io} by {group,kind}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 8,
+                "y": 0,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 4282148986424876,
+            "definition": {
+                "title": "Upjet Terraform Running Processes",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "legend_layout": "auto",
+                "legend_columns": [
+                    "avg",
+                    "min",
+                    "max",
+                    "value",
+                    "sum"
+                ],
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "per_minute(query1)"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "max:uxp.upjet_terraform_running_processes{*}"
+                            }
+                        ],
+                        "response_format": "timeseries",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        },
+                        "display_type": "line"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 0,
+                "y": 2,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 5377123144418582,
+            "definition": {
+                "title": "AWS EKS Upjet Resource Time To Readiness Bucket",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true,
+                    "scale": "linear"
+                },
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.upjet_resource_ttr_bucket{group:eks.aws.upbound.io} by {kind}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 4,
+                "y": 2,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 7489664303085130,
+            "definition": {
+                "title": "AWS Elasticache Upjet Resource Time To Readiness Bucket",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true,
+                    "scale": "linear"
+                },
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.upjet_resource_ttr_bucket{group:elasticache.aws.upbound.io} by {kind}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 8,
+                "y": 2,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 852694346314535,
+            "definition": {
+                "title": "Upjet Terraform CLI Duration Bucket",
+                "show_legend": true,
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "sum:uxp.upjet_terraform_cli_duration_bucket{*} by {le,pod,subcommand,mode,host}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 0,
+                "y": 4,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 1694254869321133,
+            "definition": {
+                "title": "AWS IAM Upjet Resource Time To Readiness Bucket",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true,
+                    "scale": "linear"
+                },
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.upjet_resource_ttr_bucket{group:iam.aws.upbound.io} by {kind}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 4,
+                "y": 4,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 263659063796115,
+            "definition": {
+                "title": "AWS KMS Upjet Resource Time To Readiness Bucket",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true,
+                    "scale": "linear"
+                },
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.upjet_resource_ttr_bucket{group:kms.aws.upbound.io} by {kind}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 8,
+                "y": 4,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 3138216816161338,
+            "definition": {
+                "title": "Upjet Resource Time To Readiness Count",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "legend_layout": "auto",
+                "legend_columns": [
+                    "avg",
+                    "min",
+                    "max",
+                    "value",
+                    "sum"
+                ],
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.upjet_resource_ttr_count{*}.as_rate()"
+                            }
+                        ],
+                        "response_format": "timeseries",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        },
+                        "display_type": "line"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 0,
+                "y": 6,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 2045058391265120,
+            "definition": {
+                "title": "AWS S3 Upjet Resource Time To Readiness Bucket",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true,
+                    "scale": "linear"
+                },
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.upjet_resource_ttr_bucket{group:s3.aws.upbound.io} by {kind}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 4,
+                "y": 6,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 3997853353410790,
+            "definition": {
+                "title": "AWS MQ Upjet Resource Time To Readiness Bucket",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true,
+                    "scale": "linear"
+                },
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.upjet_resource_ttr_bucket{group:mq.aws.upbound.io} by {kind}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 8,
+                "y": 6,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 3688505539336030,
+            "definition": {
+                "title": "Upjet Terraform CLI Duration Count",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "legend_layout": "auto",
+                "legend_columns": [
+                    "avg",
+                    "min",
+                    "max",
+                    "value",
+                    "sum"
+                ],
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.upjet_terraform_cli_duration_count{*}.as_rate()"
+                            }
+                        ],
+                        "response_format": "timeseries",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        },
+                        "display_type": "line"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 0,
+                "y": 8,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 1219556242777681,
+            "definition": {
+                "title": "AWS Secretsmanager Upjet Resource Time To Readiness Bucket",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "legend_layout": "auto",
+                "legend_columns": [
+                    "avg",
+                    "min",
+                    "max",
+                    "value",
+                    "sum"
+                ],
+                "time": {},
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.upjet_resource_ttr_bucket{group:secretsmanager.aws.upbound.io} by {kind}"
+                            }
+                        ],
+                        "response_format": "timeseries",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        },
+                        "display_type": "line"
+                    }
+                ],
+                "yaxis": {
+                    "scale": "linear",
+                    "include_zero": true,
+                    "min": "auto",
+                    "max": "auto"
+                }
+            },
+            "layout": {
+                "x": 4,
+                "y": 8,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 5755476577168375,
+            "definition": {
+                "title": "AWS WAF Upjet Resource Time To Readiness Bucket",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true,
+                    "scale": "linear"
+                },
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.upjet_resource_ttr_bucket{group:waf.aws.upbound.io} by {kind}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 8,
+                "y": 8,
+                "width": 4,
+                "height": 2
+            }
+        }
+    ],
+    "template_variables": [],
+    "layout_type": "ordered",
+    "notify_list": [],
+    "reflow_type": "fixed"
+}
