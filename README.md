@@ -35,6 +35,10 @@ do not show data. They do show that data when it is emitted.
 The `_output` directory includes readily usable configuration packages
 after `make build` has been run.
 
+## References
+- [Datadog Upbound_UXP Integration](https://github.com/DataDog/integrations-extras/tree/master/upbound_uxp)
+- [SIG Observability Slack Channel](https://crossplane.slack.com/archives/C061GNH3LA0)
+
 ## Community
 Feel free to join the
 [SIG Observability Slack Channel](https://crossplane.slack.com/archives/C061GNH3LA0)
