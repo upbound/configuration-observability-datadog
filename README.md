@@ -18,8 +18,17 @@ The `local-dev` cluster will remain after tests and you can run
 ### Dashboards
 JSON for loadable dashboards is located in `.up/dashboards`.
 
+Sample dashboards that are included in this repositary are
+shown below. Note that some panels in those images coincidentally
+do not show data. They do show that data when it is emitted.
+
+#### Upbound UXP Overview
 ![Upbound UXP Overview](.up/dashboards/upbound_uxp_overview.png)
+
+#### Upbound UXP Min Set
 ![Upbound UXP Min Set](.up/dashboards/upbound_uxp_min_set.png)
+
+#### Upbound UXP MR TTR
 ![Upbound UXP MR TTR](.up/dashboards/upbound_uxp_mr_ttr.png)
 
 ### XPKG
