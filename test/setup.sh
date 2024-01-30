@@ -60,7 +60,7 @@ echo_step_completed "Loaded Docker image"
 
 echo_info "Building and Loading Datadog XMetrics Agent with Upbound integration"
 CWD=$(pwd)
-cd ${SCRIPT_DIR}/../.up/config/datadog-xm
+cd ${SCRIPT_DIR}/../cluster/images/x-metrics
 docker build -t datadog-upbound_xmetrics:v1.0.0 .
 echo_step_completed "Datadog XMetrics Image Built"
 cd ${CWD}
