@@ -24,7 +24,7 @@ UPTEST_VERSION = v0.2.1
 
 REGISTRY_ORGS = xpkg.upbound.io/crossplane-contrib
 IMAGES = x-metrics
--include build/makelib/imagelight.mk
+#-include build/makelib/imagelight.mk
 
 # ====================================================================================
 # Setup XPKG
