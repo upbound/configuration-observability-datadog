@@ -16,6 +16,16 @@ UP_CHANNEL = stable
 UPTEST_VERSION = v0.2.1
 
 -include build/makelib/k8s_tools.mk
+
+# ====================================================================================
+# Setup Images
+# Due to the way that the shared build logic works, images should
+# all be in folders at the same level (no additional levels of nesting).
+
+REGISTRY_ORGS = xpkg.upbound.io/crossplane-contrib
+IMAGES = x-metrics
+#-include build/makelib/imagelight.mk
+
 # ====================================================================================
 # Setup XPKG
 
@@ -23,7 +33,7 @@ UPTEST_VERSION = v0.2.1
 # certain conventions such as the default examples root or package directory.
 XPKG_DIR = $(shell pwd)
 XPKG_EXAMPLES_DIR = .up/examples
-XPKG_IGNORE = .github/workflows/ci.yaml,.github/workflows/tag.yml,.github/workflows/e2e.yaml,init/*.yaml,.up/examples/upbound/*.yaml,.work/uptest-datasource.yaml,.up/config/provider/*.yaml,.up/examples/datadog.yaml
+XPKG_IGNORE = .github/workflows/ci.yaml,.github/workflows/tag.yml,.github/workflows/e2e.yaml,init/*.yaml,.up/examples/upbound/*.yaml,.work/uptest-datasource.yaml,.up/config/*/*,.up/examples/datadog.yaml,cluster/*/*/*
 
 XPKG_REG_ORGS ?= xpkg.upbound.io/upbound
 # NOTE(hasheddan): skip promoting on xpkg.upbound.io as channel tags are

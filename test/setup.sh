@@ -53,10 +53,19 @@ echo_info "Building and Loading Datadog Agent with Upbound integration"
 CWD=$(pwd)
 cd ${SCRIPT_DIR}/../.up/config/datadog
 docker build -t datadog-upbound_uxp:v1.0.0 .
-echo_step_completed "Image Built"
+echo_step_completed "Datadog Image Built"
 cd ${CWD}
 kind load docker-image datadog-upbound_uxp:v1.0.0 --name ${KIND_CLUSTER_NAME}
 echo_step_completed "Loaded Docker image"
+
+echo_info "Building and Loading Datadog XMetrics Agent with Upbound integration"
+CWD=$(pwd)
+cd ${SCRIPT_DIR}/../cluster/images/x-metrics
+docker build -t datadog-upbound_xmetrics:v1.0.0 .
+echo_step_completed "Datadog XMetrics Image Built"
+cd ${CWD}
+kind load docker-image datadog-upbound_xmetrics:v1.0.0 --name ${KIND_CLUSTER_NAME}
+echo_step_completed "Loaded Docker XMetrics image"
 
 echo_info "Waiting for Crossplane Pod readiness"
 kubectl wait -n ${CROSSPLANE_NAMESPACE} pods --all --for condition=Ready 2>/dev/null

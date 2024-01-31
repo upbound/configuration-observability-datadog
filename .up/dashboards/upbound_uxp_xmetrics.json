@@ -1,0 +1,769 @@
+{
+    "title": "Upbound UXP Metrics",
+    "description": "## Upbound UXP XMetrics\n\nThis dashboard shows a subset of the following Upbound UXP XMetrics.\n\n- apiextensions_crossplane_io_CompositeResourceDefinition_v1\n- apiextensions_crossplane_io_CompositeResourceDefinition_v1_created\n- apiextensions_crossplane_io_CompositeResourceDefinition_v1_info\n- apiextensions_crossplane_io_CompositeResourceDefinition_v1_labels\n- apiextensions_crossplane_io_CompositeResourceDefinition_v1_ready\n- apiextensions_crossplane_io_CompositeResourceDefinition_v1_ready_time\n- apiextensions_crossplane_io_CompositeResourceDefinition_v1_synced\n- apiextensions_crossplane_io_CompositeResourceDefinition_v1_synced_time\n- apiextensions_crossplane_io_CompositionRevision_v1\n- apiextensions_crossplane_io_CompositionRevision_v1_created\n- apiextensions_crossplane_io_CompositionRevision_v1_info\n- apiextensions_crossplane_io_CompositionRevision_v1_labels\n- apiextensions_crossplane_io_CompositionRevision_v1_ready\n- apiextensions_crossplane_io_CompositionRevision_v1_ready_time\n- apiextensions_crossplane_io_CompositionRevision_v1_synced\n- apiextensions_crossplane_io_CompositionRevision_v1_synced_time\n- apiextensions_crossplane_io_CompositionRevision_v1beta1\n- apiextensions_crossplane_io_CompositionRevision_v1beta1_created\n- apiextensions_crossplane_io_CompositionRevision_v1beta1_info\n- apiextensions_crossplane_io_CompositionRevision_v1beta1_labels\n- apiextensions_crossplane_io_CompositionRevision_v1beta1_ready\n- apiextensions_crossplane_io_CompositionRevision_v1beta1_ready_time\n- apiextensions_crossplane_io_CompositionRevision_v1beta1_synced\n- apiextensions_crossplane_io_CompositionRevision_v1beta1_synced_time\n- apiextensions_crossplane_io_Composition_v1\n- apiextensions_crossplane_io_Composition_v1_created\n- apiextensions_crossplane_io_Composition_v1_info\n- apiextensions_crossplane_io_Composition_v1_labels\n- apiextensions_crossplane_io_Composition_v1_ready\n- apiextensions_crossplane_io_Composition_v1_ready_time\n- apiextensions_crossplane_io_Composition_v1_synced\n- apiextensions_crossplane_io_Composition_v1_synced_time\n- helm_crossplane_io_ProviderConfigUsage_v1alpha1\n- helm_crossplane_io_ProviderConfigUsage_v1alpha1_created\n- helm_crossplane_io_ProviderConfigUsage_v1alpha1_info\n- helm_crossplane_io_ProviderConfigUsage_v1alpha1_labels\n- helm_crossplane_io_ProviderConfigUsage_v1alpha1_ready\n- helm_crossplane_io_ProviderConfigUsage_v1alpha1_ready_time\n- helm_crossplane_io_ProviderConfigUsage_v1alpha1_synced\n- helm_crossplane_io_ProviderConfigUsage_v1alpha1_synced_time\n- helm_crossplane_io_ProviderConfigUsage_v1beta1\n- helm_crossplane_io_ProviderConfigUsage_v1beta1_created\n- helm_crossplane_io_ProviderConfigUsage_v1beta1_info\n- helm_crossplane_io_ProviderConfigUsage_v1beta1_labels\n- helm_crossplane_io_ProviderConfigUsage_v1beta1_ready\n- helm_crossplane_io_ProviderConfigUsage_v1beta1_ready_time\n- helm_crossplane_io_ProviderConfigUsage_v1beta1_synced\n- helm_crossplane_io_ProviderConfigUsage_v1beta1_synced_time\n- helm_crossplane_io_ProviderConfig_v1alpha1\n- helm_crossplane_io_ProviderConfig_v1alpha1_created\n- helm_crossplane_io_ProviderConfig_v1alpha1_info\n- helm_crossplane_io_ProviderConfig_v1alpha1_labels\n- helm_crossplane_io_ProviderConfig_v1alpha1_ready\n- helm_crossplane_io_ProviderConfig_v1alpha1_ready_time\n- helm_crossplane_io_ProviderConfig_v1alpha1_synced\n- helm_crossplane_io_ProviderConfig_v1alpha1_synced_time\n- helm_crossplane_io_ProviderConfig_v1beta1\n- helm_crossplane_io_ProviderConfig_v1beta1_created\n- helm_crossplane_io_ProviderConfig_v1beta1_info\n- helm_crossplane_io_ProviderConfig_v1beta1_labels\n- helm_crossplane_io_ProviderConfig_v1beta1_ready\n- helm_crossplane_io_ProviderConfig_v1beta1_ready_time\n- helm_crossplane_io_ProviderConfig_v1beta1_synced\n- helm_crossplane_io_ProviderConfig_v1beta1_synced_time\n- helm_crossplane_io_Release_v1alpha1\n- helm_crossplane_io_Release_v1alpha1_created\n- helm_crossplane_io_Release_v1alpha1_info\n- helm_crossplane_io_Release_v1alpha1_labels\n- helm_crossplane_io_Release_v1alpha1_ready\n- helm_crossplane_io_Release_v1alpha1_ready_time\n- helm_crossplane_io_Release_v1alpha1_synced\n- helm_crossplane_io_Release_v1alpha1_synced_time\n- helm_crossplane_io_Release_v1beta1\n- helm_crossplane_io_Release_v1beta1_created\n- helm_crossplane_io_Release_v1beta1_info\n- helm_crossplane_io_Release_v1beta1_labels\n- helm_crossplane_io_Release_v1beta1_ready\n- helm_crossplane_io_Release_v1beta1_ready_time\n- helm_crossplane_io_Release_v1beta1_synced\n- helm_crossplane_io_Release_v1beta1_synced_time\n- kubernetes_crossplane_io_Object_v1alpha1\n- kubernetes_crossplane_io_Object_v1alpha1_created\n- kubernetes_crossplane_io_Object_v1alpha1_info\n- kubernetes_crossplane_io_Object_v1alpha1_labels\n- kubernetes_crossplane_io_Object_v1alpha1_ready\n- kubernetes_crossplane_io_Object_v1alpha1_ready_time\n- kubernetes_crossplane_io_Object_v1alpha1_synced\n- kubernetes_crossplane_io_Object_v1alpha1_synced_time\n- kubernetes_crossplane_io_ProviderConfigUsage_v1alpha1\n- kubernetes_crossplane_io_ProviderConfigUsage_v1alpha1_created\n- kubernetes_crossplane_io_ProviderConfigUsage_v1alpha1_info\n- kubernetes_crossplane_io_ProviderConfigUsage_v1alpha1_labels\n- kubernetes_crossplane_io_ProviderConfigUsage_v1alpha1_ready\n- kubernetes_crossplane_io_ProviderConfigUsage_v1alpha1_ready_time\n- kubernetes_crossplane_io_ProviderConfigUsage_v1alpha1_synced\n- kubernetes_crossplane_io_ProviderConfigUsage_v1alpha1_synced_time\n- kubernetes_crossplane_io_ProviderConfig_v1alpha1\n- kubernetes_crossplane_io_ProviderConfig_v1alpha1_created\n- kubernetes_crossplane_io_ProviderConfig_v1alpha1_info\n- kubernetes_crossplane_io_ProviderConfig_v1alpha1_labels\n- kubernetes_crossplane_io_ProviderConfig_v1alpha1_ready\n- kubernetes_crossplane_io_ProviderConfig_v1alpha1_ready_time\n- kubernetes_crossplane_io_ProviderConfig_v1alpha1_synced\n- kubernetes_crossplane_io_ProviderConfig_v1alpha1_synced_time\n- metrics_crossplane_io_ClusterMetric_v1\n- metrics_crossplane_io_ClusterMetric_v1_created\n- metrics_crossplane_io_ClusterMetric_v1_info\n- metrics_crossplane_io_ClusterMetric_v1_labels\n- metrics_crossplane_io_ClusterMetric_v1_ready\n- metrics_crossplane_io_ClusterMetric_v1_ready_time\n- metrics_crossplane_io_ClusterMetric_v1_synced\n- metrics_crossplane_io_ClusterMetric_v1_synced_time\n- metrics_crossplane_io_Metric_v1\n- metrics_crossplane_io_Metric_v1_created\n- metrics_crossplane_io_Metric_v1_info\n- metrics_crossplane_io_Metric_v1_labels\n- metrics_crossplane_io_Metric_v1_ready\n- metrics_crossplane_io_Metric_v1_ready_time\n- metrics_crossplane_io_Metric_v1_synced\n- metrics_crossplane_io_Metric_v1_synced_time\n- pkg_crossplane_io_ConfigurationRevision_v1\n- pkg_crossplane_io_ConfigurationRevision_v1_created\n- pkg_crossplane_io_ConfigurationRevision_v1_info\n- pkg_crossplane_io_ConfigurationRevision_v1_labels\n- pkg_crossplane_io_ConfigurationRevision_v1_ready\n- pkg_crossplane_io_ConfigurationRevision_v1_ready_time\n- pkg_crossplane_io_ConfigurationRevision_v1_synced\n- pkg_crossplane_io_ConfigurationRevision_v1_synced_time\n- pkg_crossplane_io_Configuration_v1\n- pkg_crossplane_io_Configuration_v1_created\n- pkg_crossplane_io_Configuration_v1_info\n- pkg_crossplane_io_Configuration_v1_labels\n- pkg_crossplane_io_Configuration_v1_ready\n- pkg_crossplane_io_Configuration_v1_ready_time\n- pkg_crossplane_io_Configuration_v1_synced\n- pkg_crossplane_io_Configuration_v1_synced_time\n- pkg_crossplane_io_Lock_v1beta1\n- pkg_crossplane_io_Lock_v1beta1_created\n- pkg_crossplane_io_Lock_v1beta1_info\n- pkg_crossplane_io_Lock_v1beta1_labels\n- pkg_crossplane_io_Lock_v1beta1_ready\n- pkg_crossplane_io_Lock_v1beta1_ready_time\n- pkg_crossplane_io_Lock_v1beta1_synced\n- pkg_crossplane_io_Lock_v1beta1_synced_time\n- pkg_crossplane_io_ProviderRevision_v1\n- pkg_crossplane_io_ProviderRevision_v1_created\n- pkg_crossplane_io_ProviderRevision_v1_info\n- pkg_crossplane_io_ProviderRevision_v1_labels\n- pkg_crossplane_io_ProviderRevision_v1_ready\n- pkg_crossplane_io_ProviderRevision_v1_ready_time\n- pkg_crossplane_io_ProviderRevision_v1_synced\n- pkg_crossplane_io_ProviderRevision_v1_synced_time\n- pkg_crossplane_io_Provider_v1\n- pkg_crossplane_io_Provider_v1_created\n- pkg_crossplane_io_Provider_v1_info\n- pkg_crossplane_io_Provider_v1_labels\n- pkg_crossplane_io_Provider_v1_ready\n- pkg_crossplane_io_Provider_v1_ready_time\n- pkg_crossplane_io_Provider_v1_synced\n- pkg_crossplane_io_Provider_v1_synced_time\n- secrets_crossplane_io_StoreConfig_v1alpha1\n- secrets_crossplane_io_StoreConfig_v1alpha1_created\n- secrets_crossplane_io_StoreConfig_v1alpha1_info\n- secrets_crossplane_io_StoreConfig_v1alpha1_labels\n- secrets_crossplane_io_StoreConfig_v1alpha1_ready\n- secrets_crossplane_io_StoreConfig_v1alpha1_ready_time\n- secrets_crossplane_io_StoreConfig_v1alpha1_synced\n- secrets_crossplane_io_StoreConfig_v1alpha1_synced_time\n\n",
+    "widgets": [
+        {
+            "id": 8639447832002408,
+            "definition": {
+                "type": "image",
+                "url": "https://static.upbound.io/marketing/upbound_uxp_logo.svg",
+                "sizing": "cover",
+                "has_background": true,
+                "has_border": true,
+                "vertical_align": "center",
+                "horizontal_align": "center"
+            },
+            "layout": {
+                "x": 0,
+                "y": 0,
+                "width": 2,
+                "height": 2
+            }
+        },
+        {
+            "id": 7058913334764000,
+            "definition": {
+                "title": "metrics_crossplane_io_ClusterMetric_v1",
+                "title_size": "16",
+                "title_align": "left",
+                "time": {},
+                "type": "query_table",
+                "requests": [
+                    {
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.metrics_crossplane_io_Metric_v1_synced{*} by {pod}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar",
+                        "formulas": [
+                            {
+                                "formula": "query1",
+                                "limit": {
+                                    "count": 500,
+                                    "order": "desc"
+                                },
+                                "cell_display_mode": "bar"
+                            }
+                        ]
+                    }
+                ],
+                "has_search_bar": "auto"
+            },
+            "layout": {
+                "x": 2,
+                "y": 0,
+                "width": 2,
+                "height": 2
+            }
+        },
+        {
+            "id": 852694346314535,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositeResourceDefinition_v1",
+                "show_legend": true,
+                "legend_layout": "auto",
+                "legend_columns": [
+                    "avg",
+                    "min",
+                    "max",
+                    "value",
+                    "sum"
+                ],
+                "time": {},
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositeResourceDefinition_v1{*} by {name}"
+                            }
+                        ],
+                        "response_format": "timeseries",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        },
+                        "display_type": "line"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 4,
+                "y": 0,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 4781289436579237,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositeResourceDefinition_v1_created",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "legend_layout": "auto",
+                "legend_columns": [
+                    "avg",
+                    "min",
+                    "max",
+                    "value",
+                    "sum"
+                ],
+                "time": {},
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositeResourceDefinition_v1_created{*} by {name}"
+                            }
+                        ],
+                        "response_format": "timeseries",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        },
+                        "display_type": "line"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 8,
+                "y": 0,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 1908169900930299,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositeResourceDefinition_v1_info",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "legend_layout": "auto",
+                "legend_columns": [
+                    "avg",
+                    "min",
+                    "max",
+                    "value",
+                    "sum"
+                ],
+                "time": {},
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositeResourceDefinition_v1_info{*} by {name}"
+                            }
+                        ],
+                        "response_format": "timeseries",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        },
+                        "display_type": "line"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 0,
+                "y": 2,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 7879128553536905,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositeResourceDefinition_v1_labels",
+                "title_size": "16",
+                "title_align": "left",
+                "time": {},
+                "type": "query_table",
+                "requests": [
+                    {
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositeResourceDefinition_v1_labels{*} by {label_provider,name}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar",
+                        "formulas": [
+                            {
+                                "cell_display_mode": "bar",
+                                "formula": "query1",
+                                "limit": {
+                                    "count": 500,
+                                    "order": "desc"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "has_search_bar": "auto"
+            },
+            "layout": {
+                "x": 4,
+                "y": 2,
+                "width": 4,
+                "height": 4
+            }
+        },
+        {
+            "id": 3816135244545824,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositeResourceDefinition_v1_ready",
+                "title_size": "16",
+                "title_align": "left",
+                "time": {},
+                "type": "query_table",
+                "requests": [
+                    {
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositeResourceDefinition_v1_ready{*} by {name}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar",
+                        "formulas": [
+                            {
+                                "cell_display_mode": "bar",
+                                "formula": "query1",
+                                "limit": {
+                                    "count": 500,
+                                    "order": "desc"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "has_search_bar": "auto"
+            },
+            "layout": {
+                "x": 8,
+                "y": 2,
+                "width": 4,
+                "height": 4
+            }
+        },
+        {
+            "id": 4885195994642462,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositeResourceDefinition_v1_ready_time",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositeResourceDefinition_v1_ready_time{*} by {name}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 0,
+                "y": 4,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 6317746971343897,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositeResourceDefinition_v1_synced",
+                "title_size": "16",
+                "title_align": "left",
+                "time": {},
+                "type": "query_table",
+                "requests": [
+                    {
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositeResourceDefinition_v1_synced{*} by {name}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar",
+                        "formulas": [
+                            {
+                                "cell_display_mode": "bar",
+                                "formula": "query1",
+                                "limit": {
+                                    "count": 500,
+                                    "order": "desc"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "has_search_bar": "auto"
+            },
+            "layout": {
+                "x": 0,
+                "y": 6,
+                "width": 4,
+                "height": 4
+            }
+        },
+        {
+            "id": 872853344484482,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositeResourceDefinition_v1_synced_time",
+                "title_size": "16",
+                "title_align": "left",
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "requests": [
+                    {
+                        "response_format": "scalar",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositeResourceDefinition_v1_synced_time{*} by {name}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "layout": {
+                "x": 4,
+                "y": 6,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 5990704685905303,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositionRevision_v1",
+                "title_size": "16",
+                "title_align": "left",
+                "show_legend": true,
+                "legend_layout": "auto",
+                "legend_columns": [
+                    "avg",
+                    "min",
+                    "max",
+                    "value",
+                    "sum"
+                ],
+                "time": {},
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ],
+                        "queries": [
+                            {
+                                "name": "query1",
+                                "data_source": "metrics",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositionRevision_v1_info{*} by {name}"
+                            }
+                        ],
+                        "response_format": "timeseries",
+                        "style": {
+                            "palette": "dog_classic",
+                            "line_type": "solid",
+                            "line_width": "normal"
+                        },
+                        "display_type": "line"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 8,
+                "y": 6,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 2158578777330860,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositionRevision_v1_created",
+                "title_size": "16",
+                "title_align": "left",
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "requests": [
+                    {
+                        "response_format": "scalar",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositionRevision_v1_created{*} by {name}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "layout": {
+                "x": 4,
+                "y": 8,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 4804627208721084,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositionRevision_v1_info",
+                "title_size": "16",
+                "title_align": "left",
+                "time": {},
+                "type": "query_table",
+                "requests": [
+                    {
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositionRevision_v1_info{*} by {name}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar",
+                        "formulas": [
+                            {
+                                "cell_display_mode": "bar",
+                                "formula": "query1",
+                                "limit": {
+                                    "count": 500,
+                                    "order": "desc"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "has_search_bar": "auto"
+            },
+            "layout": {
+                "x": 8,
+                "y": 8,
+                "width": 4,
+                "height": 4
+            }
+        },
+        {
+            "id": 4407561886681854,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositionRevision_v1_labels",
+                "title_size": "16",
+                "title_align": "left",
+                "time": {},
+                "type": "query_table",
+                "requests": [
+                    {
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositionRevision_v1_labels{*} by {name}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar",
+                        "formulas": [
+                            {
+                                "cell_display_mode": "bar",
+                                "formula": "query1",
+                                "limit": {
+                                    "count": 500,
+                                    "order": "desc"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "has_search_bar": "auto"
+            },
+            "layout": {
+                "x": 0,
+                "y": 10,
+                "width": 4,
+                "height": 4
+            }
+        },
+        {
+            "id": 4746551078553233,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositionRevision_v1_ready",
+                "title_size": "16",
+                "title_align": "left",
+                "time": {},
+                "type": "query_table",
+                "requests": [
+                    {
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositionRevision_v1_ready{*} by {name}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar",
+                        "formulas": [
+                            {
+                                "cell_display_mode": "bar",
+                                "formula": "query1",
+                                "limit": {
+                                    "count": 500,
+                                    "order": "desc"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "has_search_bar": "auto"
+            },
+            "layout": {
+                "x": 4,
+                "y": 10,
+                "width": 4,
+                "height": 4
+            }
+        },
+        {
+            "id": 7062701688873171,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositionRevision_v1_ready_time",
+                "title_size": "16",
+                "title_align": "left",
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "requests": [
+                    {
+                        "response_format": "scalar",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositionRevision_v1_ready_time{*} by {name}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "layout": {
+                "x": 8,
+                "y": 12,
+                "width": 4,
+                "height": 2
+            }
+        },
+        {
+            "id": 1419548728204676,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositionRevision_v1_synced",
+                "title_size": "16",
+                "title_align": "left",
+                "time": {},
+                "type": "query_table",
+                "requests": [
+                    {
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositionRevision_v1_synced{*} by {name}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "response_format": "scalar",
+                        "formulas": [
+                            {
+                                "cell_display_mode": "bar",
+                                "formula": "query1",
+                                "limit": {
+                                    "count": 500,
+                                    "order": "desc"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "has_search_bar": "auto"
+            },
+            "layout": {
+                "x": 0,
+                "y": 14,
+                "width": 4,
+                "height": 4
+            }
+        },
+        {
+            "id": 5201560836549585,
+            "definition": {
+                "title": "apiextensions_crossplane_io_CompositionRevision_v1_synced_time",
+                "title_size": "16",
+                "title_align": "left",
+                "time": {},
+                "type": "distribution",
+                "xaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "yaxis": {
+                    "scale": "linear",
+                    "min": "auto",
+                    "max": "auto",
+                    "include_zero": true
+                },
+                "requests": [
+                    {
+                        "response_format": "scalar",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:uxp.apiextensions_crossplane_io_CompositionRevision_v1_synced_time{*} by {name}",
+                                "aggregator": "avg"
+                            }
+                        ],
+                        "formulas": [
+                            {
+                                "formula": "query1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "layout": {
+                "x": 4,
+                "y": 14,
+                "width": 4,
+                "height": 2
+            }
+        }
+    ],
+    "template_variables": [],
+    "layout_type": "ordered",
+    "notify_list": [],
+    "reflow_type": "fixed"
+}

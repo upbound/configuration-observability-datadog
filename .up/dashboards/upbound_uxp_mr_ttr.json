@@ -1,3 +1,4 @@
+{
     "title": "Upbound UXP Resource Time To Readiness",
     "description": "## Upbound UXP Min Set\n\nThis dashboard covers graphs for the UXP Resource Time To Readiness metrics. They are as follows\n\n- upjet_resource_ttr_bucket\n- upjet_resource_ttr_count\n- upjet_resource_ttr_sum\n- upjet_terraform_cli_duration_bucket\n- upjet_terraform_active_cli_invocations\n- upjet_terraform_running_processes",
     "widgets": [
